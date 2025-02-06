@@ -1,0 +1,318 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: url(/Resources/parliament.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow-y: hidden;
+}
+
+nav {
+  height: 10vh;
+  width: 100%;
+  background-color: black;
+  color: aliceblue;
+  display: flex;
+  z-index: 1;
+  top: 0;
+  position: fixed;
+  margin-bottom: 10vh;
+}
+nav section {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav section ul {
+  display: flex;
+  gap: 20px;
+}
+nav section ul li {
+  list-style: none;
+}
+nav section ul li a {
+  color: white;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+nav section ul li a:hover {
+  color: #007bff;
+}
+nav section ul li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #007bff;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+nav section ul li a:hover::after {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+main {
+  height: 90vh;
+  width: 100%;
+  padding-top: 10vh;
+}
+main .div {
+  height: inherit;
+  scroll-margin-top: 10vh;
+  width: 100%;
+}
+main #home_div section {
+  width: 100%;
+}
+main #home_div #hint {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  background-color: #333;
+  color: #fff;
+}
+main #home_div #hint h1 {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  opacity: 1;
+  animation: fadeIn 2s ease-out;
+}
+main #home_div #home_div_content {
+  height: 70vh;
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+main #home_div #home_div_content #speaker {
+  height: 10cm;
+  width: 10cm;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+main #home_div #home_div_content #speaker img {
+  height: 10cm;
+  width: 10cm;
+  border-radius: 50%;
+  animation: fadeIn 2s ease-in-out;
+}
+main #home_div #home_div_content #speaker div {
+  margin-top: 10px;
+  width: 100%;
+  height: 150px;
+  background-color: #007bff;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+main #home_div #home_div_content #speaker div span {
+  animation: fadeIn 2s ease-in-out;
+  display: block;
+}
+main #home_div #home_div_content #infor {
+  width: 70%;
+  height: 55vh;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+main #home_div #home_div_content #infor h2 {
+  margin-bottom: 20px;
+}
+main #home_div #home_div_content #infor ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+main #home_div #home_div_content #infor ul li {
+  margin-bottom: 10px;
+  animation: fadeIn 2s ease-in-out;
+}
+main #home_div #home_div_content #infor span {
+  font-size: 30pt;
+  font-weight: bold;
+  color: #000;
+  padding: 10px 0;
+  position: relative;
+  right: 150px;
+  animation: fadeIn 2s ease-in-out;
+}
+main #Members_div,
+main #Meetings_div {
+  background-color: white;
+}
+
+.button_navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.floating-panel {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 300px;
+  padding: 15px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.floating-panel .events-list {
+  list-style-type: none;
+  padding: 0;
+}
+.floating-panel .events-list li {
+  margin-bottom: 10px;
+  font-size: 1em;
+  color: #fff;
+  animation: fadeIn 2s ease-in-out;
+  cursor: pointer;
+}
+
+.floating-tab {
+  position: fixed;
+  top: 75%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 300px;
+  padding: 15px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+}
+
+.party-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.party-name {
+  font-weight: bold;
+}
+
+.party-members {
+  color: #007bff;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+  }
+  #home_div_content {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    gap: 20px;
+  }
+  .card {
+    width: 90%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .floating-tab {
+    width: 100%;
+    padding: 10px;
+    bottom: 0;
+    top: auto;
+    right: 0;
+    transform: none;
+    flex-wrap: wrap;
+  }
+  .party-stat {
+    margin-bottom: 10px;
+  }
+}
+@keyframes moveUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+  }
+  #home_div_content {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    gap: 20px;
+  }
+  #speaker,
+  #infor {
+    width: 90%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+}/*# sourceMappingURL=Design.css.map */
